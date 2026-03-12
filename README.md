@@ -1,44 +1,31 @@
-# Projeto: Modelagem e Comportamento - Classe Carro
+PROJETO CARRO AZUL - SPRINT ENCAPSULAMENTO
 
-Este repositório contém a implementação técnica de um objeto da "Aula Zero", evoluído para uma estrutura de Programação Orientada a Objetos (POO) em Java, utilizando pacotes para organização e regras de negócio para proteção de estado.
+Descricao:
+Este projeto implementa os conceitos de Programacao Orientada a Objetos com foco em Encapsulamento e Protecao de Estado. O objeto escolhido foi o Carro Azul, evoluido com regras de seguranca reais.
 
-# Estrutura de Pacotes
-O projeto segue uma organização de camadas para melhor manutenção:
-- `Carroazulzinho.model`: Contém a classe de domínio `Carro.java`.
-- `Main`: Contém a classe de execução e testes `Main.java`.
+Implementacao de Encapsulamento:
 
-# Implementação Técnica
+    Todos os atributos da classe Carro (modelo, velocidadeAtual, marchaRe) foram definidos como privados.
 
-# 1. Encapsulamento e Estado
-Os atributos da classe (cor, modelo, marca, velocidade) foram definidos como **privados** (`private`), garantindo que o estado do objeto só possa ser alterado através de métodos controlados.
+    O acesso e a modificacao desses dados ocorrem exclusivamente atraves de metodos Publicos (Getters e Setters).
 
-# 2. Métodos e Regras de Negócio
-Foram implementados comportamentos com validações rigorosas (Proteção de Estado):
+Regra Especial de Negocio:
+Foi implementada uma trava de seguranca no metodo setMarchaRe. O sistema impede o engate da marcha re caso o veiculo esteja em movimento (velocidade maior que 0). Essa validacao garante a integridade do objeto e simula o comportamento de um cambio real.
 
-- **Acelerar:** O método valida se o incremento é positivo. Não é permitido acelerar com valores negativos ou nulos.
-- **Frear:** O método impede que a velocidade do veículo se torne negativa. Caso o decremento seja maior que a velocidade atual, o sistema crava o valor em `0.0 km/h`.
+Instrucoes de Execucao:
 
-# Como Executar
-Para compilar e rodar o projeto via terminal:
+    Navegue ate a pasta src.
 
-1. Navegue até a pasta `src`.
-2. Compile as classes:
-   ```bash
-   javac Main/Main.java Carroazulzinho/model/Carro.java
+    Compile: javac Main/Main.java Carroazulzinho/model/Carro.java
 
-    Execute os testes:
-    Bash
+    Execute: java Main.Main
 
-    java Main.Main
+Arquivos do Repositorio:
 
-Arquivos do Projeto
+    Carro.java: Classe com atributos privados e logica de protecao.
 
-    Carro.java: Lógica do objeto e validações.
+    Main.java: Classe de teste que demonstra o bloqueio da marcha re em velocidade.
 
-    Main.java: Testes automatizados com valores válidos e inválidos.
-
-    diagrama_classe.asta: Modelagem UML atualizada.
+    CarroAzul.asta: Diagrama de classes UML atualizado.
 
 Autor: Rodrigo Campos Cordeiro
-
-Sprint: Métodos, Comportamentos e Encapsulamento (Java)
