@@ -1,19 +1,18 @@
-package Main; // Adicionado para bater com a pasta 'Main'
+package Main;
 
 import Carroazulzinho.model.Carro;
 
 public class Main {
     public static void main(String[] args) {
-        Carro meuCarro = new Carro("Sedan", "Marca X");
+        Carro meuCarro = new Carro("Skyline Azul");
 
-        System.out.println("--- Testes de Comportamento (Carro Azul) ---");
+        System.out.println("Teste de Seguranca - Marcha Re");
+
+        meuCarro.acelerar(30.0);
         
-        // Teste: Aceleração Válida
-        meuCarro.acelerar(80);
+        System.out.println("Tentando burlar o sistema engatando a re em velocidade...");
+        meuCarro.setMarchaRe(true); 
 
-        // Teste: Regra de Negócio (Limite inferior)
-        meuCarro.frear(120); 
-
-        System.out.println("\n--- Testes Finalizados ---");
+        System.out.println("Verificando se o sistema bloqueou a re: " + !meuCarro.isMarchaRe());
     }
 }
